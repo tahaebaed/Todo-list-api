@@ -1,0 +1,12 @@
+@import './_Variables.scss';
+
+.bar_menu {
+  background-color: $primary-background !important;
+}
+
+.navBar-Btn {
+  color: #fff !important;
+}
+.navBar-Btn:hover {
+  color: $primary-color !important;
+}

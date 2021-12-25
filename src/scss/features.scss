@@ -1,0 +1,18 @@
+@import './_Variables.scss';
+
+.after {
+  position: relative;
+}
+
+.after::after {
+  content: '';
+  width: 6rem;
+  background-color: $secondary-background;
+  height: 0.5rem;
+  z-index: 99;
+  top: calc(54% + 14px);
+  left: calc(50% + -36px);
+  position: absolute;
+  border-radius: 50px;
+  margin: 1rem 0;
+}

@@ -1,0 +1,18 @@
+@import './_Variables.scss';
+
+.primaryColor {
+  color: $primary-color !important;
+}
+.primaryColor:active {
+  color: white !important;
+}
+
+.page-item.active .page-link {
+  color: white !important;
+  background-color: $primary-background !important;
+  border-color: $primary-background !important;
+}
+
+.input_hight {
+  height: 0.5rem !important;
+}
