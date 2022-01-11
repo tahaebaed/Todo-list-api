@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 import Buttons from '../components/Buttons';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutRequest } from '../store/auth/actions';
+import { auth } from '../store/auth/sagas';
 import '../scss/Bar.scss';
+
 const NavBar = () => {
   const dispatch = useDispatch();
   const userData = useSelector(state => state.auth);
-
+  console.log(auth);
   useEffect(() => {
     // dispatch(getTokenReq);
-  }, []);
+  }, [auth]);
 
   return (
     <div className='bar_menu w-100'>

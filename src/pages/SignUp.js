@@ -5,9 +5,10 @@ import FormsInputs from '../components/FormsInputs';
 import Buttons from '../components/Buttons';
 import { useNavigate } from 'react-router';
 import signupImg from '../assets/signup.svg';
-import '../scss/pointer.scss';
 import { useDispatch } from 'react-redux';
 import { signUpRequest } from '../store/auth/actions';
+import '../scss/pointer.scss';
+
 const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

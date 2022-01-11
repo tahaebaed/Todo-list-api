@@ -3,9 +3,12 @@ import * as API from './api';
 import { types as TYPES } from './types';
 import { getTokenRes } from './actions';
 
+export let auth = false;
+
 function* logIn({ payload }) {
   try {
     yield call(API.logIn, payload);
+    auth = true;
   } catch (err) {
     console.error(err);
   }
@@ -35,11 +38,12 @@ function* updateUser({ payload }) {
 function* logOut({ payload }) {
   try {
     yield call(API.logOut, payload);
+    auth = false;
   } catch (err) {
     console.error(err);
   }
 }
-function* fetchToken({ payload }) {
+function* fetchToken() {
   try {
     const res = yield call(API.getToken);
     const data = res;

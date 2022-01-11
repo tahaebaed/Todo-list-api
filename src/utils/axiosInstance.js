@@ -1,7 +1,4 @@
 import axios from 'axios';
-
-import { getToken } from '../store/auth/api';
-
 const baseURL = 'https://api-nodejs-todolist.herokuapp.com';
 
 const axiosInstance = axios.create({
@@ -26,7 +23,6 @@ axiosInstance.interceptors.request.use(
       case '/task?limit=2&skip=10':
         req.headers.common.Authorization = `Bearer ${localStorage.token}`;
         break;
-
       default:
         break;
     }

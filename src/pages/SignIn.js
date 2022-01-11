@@ -4,11 +4,12 @@ import FormsInputs from '../components/FormsInputs';
 import Buttons from '../components/Buttons';
 import logoImg from '../assets/loginImg.jpg';
 import React, { useEffect, useState } from 'react';
-import '../scss/pointer.scss';
 import { useDispatch } from 'react-redux';
 import SkeletonSignIn from './Skelteon';
 import { useNavigate } from 'react-router';
 import { loginRequest } from '../store/auth/actions';
+import '../scss/pointer.scss';
+
 const SignIn = props => {
   const [loaded, setloaded] = useState(false);
   let navigate = useNavigate();
@@ -30,7 +31,7 @@ const SignIn = props => {
         .required('This field is required')
         .matches(
           /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-          'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character'
+          'You haved entered Wrong Email Or Password'
         ),
     }),
     onSubmit: values => {

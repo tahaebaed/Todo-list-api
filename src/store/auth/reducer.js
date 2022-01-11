@@ -1,11 +1,11 @@
 import { types } from './types';
-
-export function auth(state = {}, action) {
+export function auth(state = {}, action, authState) {
   switch (action.type) {
     case types.LOGIN_REQUEST:
       return {
         ...state,
         ...action.payload,
+        authState: true,
       };
     case types.GET_TOKEN_RES:
       return {

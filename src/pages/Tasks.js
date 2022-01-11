@@ -62,7 +62,7 @@
 
 // export default Tasks;
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Buttons from '../components/Buttons';
 import {
@@ -74,13 +74,10 @@ import {
 } from '../store/tasksList/actions';
 import ReactPaginate from 'react-paginate';
 import DeleteIcon from '@material-ui/icons/Delete';
-import UpdateIcon from '@material-ui/icons/Update';
-import DataTable from '../components/DataDisplay';
-import Pagination from '../layout/Pagination';
 import FormsInputs from '../components/FormsInputs';
-import '../scss/tasks.scss';
 import { IconButton } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
+import '../scss/tasks.scss';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -99,7 +96,7 @@ const Tasks = () => {
   useEffect(() => {
     dispatch(getTaskList());
     console.log(update);
-  }, []);
+  });
   const [description, setDescription] = useState('');
   const taskLists = useSelector(state => state.tasks);
   const gridData = taskLists.data?.map(task => task);
